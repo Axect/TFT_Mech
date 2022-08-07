@@ -12,7 +12,7 @@ fn main() {
     let v_init = 0f64;
     let a_init = -20f64;
 
-    let dt = 1e-4;
+    let dt = 1e-3;
 
     let gamma = 0.5;
     let beta = 0.25; // for average constant acceleration
@@ -53,6 +53,7 @@ fn main() {
         df.push(&format!("x_{}", i), Series::new(x_hash[&i].clone()));
         df.push(&format!("v_{}", i), Series::new(v_hash[&i].clone()));
         df.push(&format!("a_{}", i), Series::new(a_hash[&i].clone()));
+        df.push(&format!("zeta_{}", i), Series::new(vec![zeta_vec[i]]));
     }
 
     df.print();
